@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrinkFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6os-XX-mrb">
+                                <rect key="frame" x="16" y="54" width="124" height="124"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-fM-2RN">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GSp-tt-CpH">
+                                                <rect key="frame" x="17" y="0.0" width="90" height="90"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="4ON-mF-Hj7"/>
+                                                    <constraint firstAttribute="width" constant="90" id="s4j-sF-N8x"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7z-aB-iIG">
+                                                <rect key="frame" x="0.0" y="90" width="124" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="l7z-aB-iIG" secondAttribute="trailing" id="Cdh-6o-huE"/>
+                                            <constraint firstItem="l7z-aB-iIG" firstAttribute="leading" secondItem="hwu-fM-2RN" secondAttribute="leading" id="HIV-0W-Ygl"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.31621145810000001" blue="0.82899733509999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hwu-fM-2RN" secondAttribute="trailing" id="5CE-tb-RXf"/>
+                                    <constraint firstItem="hwu-fM-2RN" firstAttribute="leading" secondItem="6os-XX-mrb" secondAttribute="leading" id="9VV-pz-Dm2"/>
+                                    <constraint firstAttribute="height" constant="124" id="MBG-83-4eH"/>
+                                    <constraint firstAttribute="width" constant="124" id="OX7-yE-o9Q"/>
+                                    <constraint firstItem="hwu-fM-2RN" firstAttribute="top" secondItem="6os-XX-mrb" secondAttribute="top" id="WjK-Yo-fYf"/>
+                                    <constraint firstAttribute="bottom" secondItem="hwu-fM-2RN" secondAttribute="bottom" id="ZDX-JV-si8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6os-XX-mrb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="34" id="CWh-QB-JYu"/>
+                            <constraint firstItem="6os-XX-mrb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fXD-uA-ICM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="102.99850074962519"/>
+        </scene>
+    </scenes>
+</document>
