@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var collectionView : DrinkFinderCollectionView!
-
     
     lazy var drinkFinderTableView : UITableView = {
         let tableView = UITableView(frame: self.view.frame)
@@ -30,11 +29,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //drinkFinderTableView.isScrollEnabled = false
         drinkFinderTableView.rowHeight = UITableViewAutomaticDimension
         drinkFinderTableView.estimatedRowHeight = 300
+        drinkFinderTableView.separatorStyle = .none
+        drinkFinderTableView.tableFooterView = UIView(frame: .zero)
         drinkFinderTableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         drinkFinderTableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         drinkFinderTableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         drinkFinderTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         // Do any additional setup after loading the view, typically from a nib.
+        
+
     }
     
     
@@ -70,33 +73,29 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 300
+            return 350
         }
          else {
-            return 70
+            return 120
         }
     }
     
-    private func tableView(_ tableView: UITableView,
-                            willDisplayCell cell: UITableViewCell,
-                            forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        guard let tableViewCell = cell as? TableViewCell else { return }
-        
-        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-    }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : TableViewCell = TableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.backgroundColor = .gray
-        cell.collectionView = DrinkFinderCollectionView(targetView: cell)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.leftAnchor.constraint(equalTo: cell.leftAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
-        collectionView.rightAnchor.constraint(equalTo: cell.rightAnchor).isActive = true
-        collectionView.backgroundColor = .white
-        return cell
+        let tableViewCell = TableViewCell(style: .default, reuseIdentifier: "cell")
+        print(indexPath.section)
+        tableViewCell.tag = indexPath.section
+        tableViewCell.backgroundColor = .gray
+        tableViewCell.collectionView = DrinkFinderCollectionView( tableViewCell)
+        tableViewCell.collectionView.tag = indexPath.section
+        tableViewCell.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        tableViewCell.collectionView.leftAnchor.constraint(equalTo: tableViewCell.leftAnchor).isActive = true
+        tableViewCell.collectionView.topAnchor.constraint(equalTo: tableViewCell.topAnchor).isActive = true
+        tableViewCell.collectionView.bottomAnchor.constraint(equalTo: tableViewCell.bottomAnchor).isActive = true
+        tableViewCell.collectionView.rightAnchor.constraint(equalTo: tableViewCell.rightAnchor).isActive = true
+        tableViewCell.collectionView.backgroundColor = .white
+        return tableViewCell
     }
 
 }
@@ -104,18 +103,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
 class TableViewCell: UITableViewCell {
     
-    @IBOutlet weak var collectionView: DrinkFinderCollectionView!
+     var collectionView: DrinkFinderCollectionView!
     
-    
-    func setCollectionViewDataSourceDelegate
-        <D: UICollectionViewDataSource & UICollectionViewDelegate>
-        (dataSourceDelegate: D, forRow row: Int) {
-        
-        collectionView.delegate = dataSourceDelegate
-        collectionView.dataSource = dataSourceDelegate
-        collectionView.tag = row
-       // collectionView.reloadData()
-    }
+   
 }
 
 

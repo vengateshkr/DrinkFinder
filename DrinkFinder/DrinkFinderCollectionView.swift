@@ -8,12 +8,14 @@
 
 import UIKit
 
-class DrinkFinderCollectionView: UICollectionView,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-
+class DrinkFinderCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     let cellId : String = "cell"
-
-    init(targetView : UIView) {
+    
+    init(_ targetView : UIView) {
         super.init(frame: UIScreen.main.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        
+        print(self.tag)
         self.delegate = self
         self.dataSource = self
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -30,22 +32,26 @@ class DrinkFinderCollectionView: UICollectionView,UICollectionViewDelegate,UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 { return 7}
-        else {return 0 }
+        if collectionView.tag == 0 {
+            return 7
+        } else {
+            return 3
+        }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        print((collectionView.frame.width)/3  , collectionView.frame.height/3)
-        return CGSize(width: (collectionView.frame.width - 26)/3, height: collectionView.frame.height / 3)
-
+        if collectionView.tag == 0 {
+            return CGSize(width: (collectionView.frame.width - 26)/3, height: (collectionView.frame.height / 3) )
+        }
+        else {
+            return CGSize(width: (collectionView.frame.width - 26)/3, height: collectionView.frame.height - 10)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : DrinkFinderCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! DrinkFinderCollectionViewCell
-        // cell.label.text = "20"
-        cell.backgroundColor = .red
-        print(cell.frame)
+        cell.backgroundColor = .clear
         return cell
     }
     
@@ -56,11 +62,11 @@ class DrinkFinderCollectionViewCell: UICollectionViewCell {
     
     var imageView : UIImageView!
     var label : UILabel!
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         //self.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-
+        
         addViews()
     }
     
@@ -69,5 +75,29 @@ class DrinkFinderCollectionViewCell: UICollectionViewCell {
     }
     
     func addViews() {
+        self.imageView = UIImageView()
+        self.addSubview(imageView)
+        self.imageView.backgroundColor = .gray
+        self.imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        self.imageView.topAnchor.constraint(equalTo: self.topAnchor, constant : 5).isActive = true
+        self.imageView.widthAnchor.constraint(equalToConstant : 80).isActive = true
+        self.imageView.heightAnchor.constraint(equalToConstant : 80).isActive = true
+        self.imageView.setNeedsLayout()
+        self.imageView.layoutIfNeeded()
+        self.imageView.layer.cornerRadius = self.imageView.frame.width / 2.0
+        
+        
+        self.label = UILabel()
+        self.addSubview(label)
+        self.label.backgroundColor = .gray
+        self.label.translatesAutoresizingMaskIntoConstraints = false
+        self.label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        self.label.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant : 5).isActive = true
+        self.label.widthAnchor.constraint(equalToConstant : self.frame.width).isActive = true
+        self.label.heightAnchor.constraint(equalToConstant : 20).isActive = true
+        self.label.textAlignment = .center
+        self.label.text = "christmas"
+        
     }
 }
