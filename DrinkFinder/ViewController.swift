@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+
     var collectionView : DrinkFinderCollectionView!
     
     lazy var drinkFinderTableView : UITableView = {
@@ -35,9 +35,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         drinkFinderTableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         drinkFinderTableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         drinkFinderTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        // Do any additional setup after loading the view, typically from a nib.
-        
-
     }
     
     
@@ -80,14 +77,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
     }
     
-
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableViewCell = TableViewCell(style: .default, reuseIdentifier: "cell")
-        print(indexPath.section)
         tableViewCell.tag = indexPath.section
         tableViewCell.backgroundColor = .gray
-        tableViewCell.collectionView = DrinkFinderCollectionView( tableViewCell)
+        tableViewCell.collectionView = DrinkFinderCollectionView(tableViewCell,indexPath.section)
         tableViewCell.collectionView.tag = indexPath.section
         tableViewCell.collectionView.translatesAutoresizingMaskIntoConstraints = false
         tableViewCell.collectionView.leftAnchor.constraint(equalTo: tableViewCell.leftAnchor).isActive = true
@@ -104,7 +98,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 class TableViewCell: UITableViewCell {
     
      var collectionView: DrinkFinderCollectionView!
-    
    
 }
 

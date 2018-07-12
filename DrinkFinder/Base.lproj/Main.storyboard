@@ -25,23 +25,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GSp-tt-CpH">
-                                                <rect key="frame" x="17" y="0.0" width="90" height="90"/>
+                                                <rect key="frame" x="22" y="0.0" width="80" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="4ON-mF-Hj7"/>
-                                                    <constraint firstAttribute="width" constant="90" id="s4j-sF-N8x"/>
+                                                    <constraint firstAttribute="width" constant="80" id="uMd-ta-FsA"/>
+                                                    <constraint firstAttribute="height" constant="80" id="uNm-Th-3Mm"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7z-aB-iIG">
-                                                <rect key="frame" x="0.0" y="90" width="124" height="34"/>
+                                                <rect key="frame" x="41" y="80" width="42" height="44"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="l7z-aB-iIG" secondAttribute="trailing" id="Cdh-6o-huE"/>
-                                            <constraint firstItem="l7z-aB-iIG" firstAttribute="leading" secondItem="hwu-fM-2RN" secondAttribute="leading" id="HIV-0W-Ygl"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.31621145810000001" blue="0.82899733509999995" alpha="1" colorSpace="calibratedRGB"/>

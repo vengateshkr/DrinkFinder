@@ -16,6 +16,10 @@
 		66D5DD8B20F4997200878B5B /* DrinkFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DD8A20F4997200878B5B /* DrinkFinderUITests.swift */; };
 		66D5DD9920F49F2800878B5B /* DrinkFinderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DD9820F49F2800878B5B /* DrinkFinderHeaderView.swift */; };
 		66D5DD9B20F4A82500878B5B /* DrinkFinderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DD9A20F4A82500878B5B /* DrinkFinderCollectionView.swift */; };
+		66D8FEA920F5E1EC002A19B8 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D8FEA720F5E1EC002A19B8 /* APIService.swift */; };
+		66D8FEAA20F5E1EC002A19B8 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 66D8FEA820F5E1EC002A19B8 /* content.json */; };
+		66D8FEAD20F5E201002A19B8 /* DrinkFinderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D8FEAC20F5E201002A19B8 /* DrinkFinderModel.swift */; };
+		66D8FEAF20F5E21F002A19B8 /* DrinkFinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D8FEAE20F5E21F002A19B8 /* DrinkFinderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		66D5DD8C20F4997200878B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66D5DD9820F49F2800878B5B /* DrinkFinderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkFinderHeaderView.swift; sourceTree = "<group>"; };
 		66D5DD9A20F4A82500878B5B /* DrinkFinderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkFinderCollectionView.swift; sourceTree = "<group>"; };
+		66D8FEA720F5E1EC002A19B8 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		66D8FEA820F5E1EC002A19B8 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
+		66D8FEAC20F5E201002A19B8 /* DrinkFinderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkFinderModel.swift; sourceTree = "<group>"; };
+		66D8FEAE20F5E21F002A19B8 /* DrinkFinderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkFinderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,9 @@
 				66D5DD6C20F4996E00878B5B /* ViewController.swift */,
 				66D5DD9820F49F2800878B5B /* DrinkFinderHeaderView.swift */,
 				66D5DD9A20F4A82500878B5B /* DrinkFinderCollectionView.swift */,
+				66D8FEAE20F5E21F002A19B8 /* DrinkFinderViewModel.swift */,
+				66D8FEAB20F5E201002A19B8 /* Model */,
+				66D8FEA620F5E1EC002A19B8 /* Service */,
 				66D5DD6E20F4996E00878B5B /* Main.storyboard */,
 				66D5DD7120F4997200878B5B /* Assets.xcassets */,
 				66D5DD7320F4997200878B5B /* LaunchScreen.storyboard */,
@@ -129,6 +140,23 @@
 				66D5DD8C20F4997200878B5B /* Info.plist */,
 			);
 			path = DrinkFinderUITests;
+			sourceTree = "<group>";
+		};
+		66D8FEA620F5E1EC002A19B8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				66D8FEA720F5E1EC002A19B8 /* APIService.swift */,
+				66D8FEA820F5E1EC002A19B8 /* content.json */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		66D8FEAB20F5E201002A19B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				66D8FEAC20F5E201002A19B8 /* DrinkFinderModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +266,7 @@
 				66D5DD7520F4997200878B5B /* LaunchScreen.storyboard in Resources */,
 				66D5DD7220F4997200878B5B /* Assets.xcassets in Resources */,
 				66D5DD7020F4996E00878B5B /* Main.storyboard in Resources */,
+				66D8FEAA20F5E1EC002A19B8 /* content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D8FEAD20F5E201002A19B8 /* DrinkFinderModel.swift in Sources */,
 				66D5DD9920F49F2800878B5B /* DrinkFinderHeaderView.swift in Sources */,
+				66D8FEA920F5E1EC002A19B8 /* APIService.swift in Sources */,
+				66D8FEAF20F5E21F002A19B8 /* DrinkFinderViewModel.swift in Sources */,
 				66D5DD9B20F4A82500878B5B /* DrinkFinderCollectionView.swift in Sources */,
 				66D5DD6D20F4996E00878B5B /* ViewController.swift in Sources */,
 				66D5DD6B20F4996E00878B5B /* AppDelegate.swift in Sources */,
